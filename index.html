@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gerador de Nomes · Skyrim · Requiem · 3bfTweaks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+    <div class="header">
+        <div class="lang-switch">
+            <button id="langEnBtn" class="lang-btn">EN</button>
+            <button id="langPtBtn" class="lang-btn active">PT-BR</button>
+        </div>
+        <h1>ᚱᚢᚾᛖ ᛟᚠ ᚾᚨᛗᛖᛋ</h1>
+        <p id="subtitleText">Carregando dados...</p>
+    </div>
+
+    <div class="controls">
+        <div class="select-group">
+            <label id="raceLabel">RAÇA</label>
+            <select id="raceSelect" class="styled-select"></select>
+        </div>
+        <div class="select-group">
+            <label id="genderLabel">GÊNERO</label>
+            <select id="genderSelect" class="styled-select">
+                <option value="male">Masculino</option>
+                <option value="female">Feminino</option>
+            </select>
+        </div>
+        <div class="select-group">
+            <label id="classLabel">CLASSE</label>
+            <select id="classSelect" class="styled-select"></select>
+        </div>
+    </div>
+
+    <div class="name-container">
+        <div id="displayName" class="generated-name">─</div>
+    </div>
+
+    <div class="generate-btn">
+        <button id="generateBtn" class="btn-primary">✨ Gerar Novo Nome ✨</button>
+    </div>
+
+    <div class="lore-note" id="loreNote"></div>
+    <footer id="footerText">Baseado em lore oficial · Requiem + 3bfTweaks</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

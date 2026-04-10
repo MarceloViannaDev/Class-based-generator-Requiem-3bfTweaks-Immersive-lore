@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #0b1a1f 0%, #0e1114 100%);
+    font-family: 'Segoe UI', 'Roboto', 'Cinzel', system-ui, -apple-system, 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" opacity="0.08"><path fill="none" stroke="%23b7a16e" stroke-width="1.2" d="M150 80 L170 50 L190 80 L170 110 Z M300 120 L330 80 L360 120 L330 160 Z M500 200 L530 160 L560 200 L530 240 Z M650 350 L680 310 L710 350 L680 390 Z M80 400 L110 360 L140 400 L110 440 Z M420 450 L450 410 L480 450 L450 490 Z M220 520 L250 480 L280 520 L250 560 Z"/><circle cx="400" cy="300" r="35" stroke="%23b7a16e" stroke-width="1"/><path d="M400 265 L400 335 M365 300 L435 300" stroke="%23b7a16e" stroke-width="1"/></svg>');
+    background-repeat: repeat;
+    background-size: 120px;
+    pointer-events: none;
+}
+
+.card {
+    background: rgba(22, 27, 30, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 2.5rem;
+    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(210, 180, 110, 0.2);
+    width: 100%;
+    max-width: 950px;
+    padding: 2rem;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(210, 180, 110, 0.35);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed rgba(210, 180, 110, 0.5);
+    padding-bottom: 0.8rem;
+    position: relative;
+}
+
+.header h1 {
+    font-family: 'Cinzel', 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.9rem;
+    background: linear-gradient(135deg, #f5e7c8, #c9aa5f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header p {
+    color: #b9c7c9;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2rem;
+    padding: 0.2rem 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+    backdrop-filter: blur(4px);
+}
+.lang-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.1s;
+    color: #c0b48a;
+    font-family: inherit;
+}
+.lang-btn.active {
+    background: #cbad7a;
+    color: #1e2a24;
+    box-shadow: 0 0 5px #ffdfaa;
+}
+.lang-btn:not(.active):hover {
+    background: #3f4e55;
+    color: #f5e2b0;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.select-group {
+    flex: 1;
+    min-width: 140px;
+}
+.select-group label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: #cbad7a;
+    margin-bottom: 0.3rem;
+}
+.styled-select {
+    width: 100%;
+    background: #1e2a2f;
+    border: 1px solid #3f4e55;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #f0ede8;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23cbad7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 14px;
+}
+.styled-select:hover {
+    border-color: #cbad7a;
+    background-color: #26383e;
+}
+
+.name-container {
+    background: rgba(12, 18, 20, 0.8);
+    border-radius: 2rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid rgba(203, 173, 122, 0.5);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 5px 12px rgba(0,0,0,0.2);
+}
+.generated-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Cinzel', 'Georgia', serif;
+    letter-spacing: 1px;
+    color: #f3e5c9;
+    text-shadow: 0 2px 5px #00000040;
+    word-break: break-word;
+    line-height: 1.2;
+}
+.generate-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+}
+.btn-primary {
+    background: linear-gradient(95deg, #2b3a33, #1e2a24);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', 'Cinzel', sans-serif;
+    color: #ecd8ae;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 5px 0 #0f1412;
+    transform: translateY(-2px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+    border: 1px solid #7e6a3e;
+}
+.btn-primary:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #0f1412;
+}
+.btn-primary:hover {
+    background: linear-gradient(95deg, #3f5a50, #2c3d34);
+    color: #fff0db;
+    border-color: #c6a15b;
+}
+.lore-note {
+    background: #111a1dd9;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    border-left: 4px solid #cbad7a;
+    color: #cdd3cf;
+    line-height: 1.4;
+}
+footer {
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6f7a74;
+    border-top: 1px solid #2c3a36;
+    padding-top: 1rem;
+}
+@media (max-width: 650px) {
+    .card { padding: 1.2rem; }
+    .generated-name { font-size: 1.6rem; }
+    .controls { gap: 0.8rem; }
+    .lang-switch { position: static; justify-content: flex-end; margin-bottom: 0.5rem; }
+}
+.fade-name { animation: gentlePop 0.25s ease; }
+@keyframes gentlePop {
+    0% { opacity: 0.5; transform: scale(0.97);}
+    100% { opacity: 1; transform: scale(1);}
+}

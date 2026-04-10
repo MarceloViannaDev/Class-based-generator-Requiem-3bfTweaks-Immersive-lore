@@ -1,0 +1,125 @@
+{
+  "races": ["Nord", "Imperial", "Breton", "Redguard", "Altmer", "Bosmer", "Dunmer", "Orsimer", "Khajiit", "Argonian"],
+  "classes": ["Warrior", "Barbarian", "Ranger", "Rogue", "Nightblade", "Paladin", "Cleric", "Mage", "Conjurer", "Pyromancer", "Cryomancer", "Battlemage", "Spellsword", "Necromancer", "Assassin", "Archer", "Sorcerer"],
+  "firstNames": {
+    "Nord": {
+      "male": ["Bjorn", "Erik", "Farkas", "Gunnar", "Hakon", "Ivar", "Jorg", "Kjell", "Leif", "Ragnar", "Sten", "Torsten", "Ulfr", "Vilkas", "Yngvar", "Arngeir", "Frothar", "Hrothgar", "Sigurd", "Thorygg", "Vigrod", "Halvar", "Asgeir", "Grimnir", "Valdar", "Rorik", "Einarr", "Ketill", "Orvar", "Thorgest", "Alarik", "Brynjar", "Dagfinn", "Einar", "Finnr", "Geirmund", "Hjalmar", "Ingvar", "Ketil", "Magnar", "Njord", "Oddr", "Rurik", "Sigfrid", "Thorald", "Ulfgar", "Vidar", "Yngolf", "Asvald", "Brandr", "Egil", "Fenrir", "Gorm", "Hrolf", "Ivar", "Jarl", "Knut", "Loki", "Mimir", "Odin"],
+      "female": ["Aela", "Astrid", "Brynja", "Eir", "Freydis", "Gerdur", "Hilda", "Ingrid", "Jora", "Katla", "Lillemor", "Merta", "Runa", "Sigrid", "Svala", "Thora", "Vex", "Yrsa", "Hulda", "Fríða", "Gunnhild", "Ragnhild", "Solveig", "Tove", "Kára", "Sif", "Hervor", "Brynhild", "Vilma", "Rúna", "Aslaug", "Bodil", "Dagny", "Edda", "Frida", "Greta", "Helga", "Idun", "Jorunn", "Kirsten", "Liva", "Maren", "Nanna", "Oda", "Rigmor", "Sigrun", "Tora", "Ulla", "Vigdis", "Ylva", "Åse", "Borghild", "Drifa", "Eydis", "Gudrun", "Hulda", "Inga", "Jóra", "Kolbrún", "Laufey"]
+    },
+    "Imperial": {
+      "male": ["Aurelius", "Caius", "Decimus", "Fabius", "Gaius", "Horatius", "Lucius", "Marius", "Naevius", "Octavius", "Pompeius", "Quintus", "Rufus", "Septim", "Tiberius", "Valerius", "Varro", "Aulus", "Cassius", "Marcellus", "Drusus", "Flavius", "Hadrian", "Justus", "Lentulus", "Maximus", "Priscus", "Tacitus", "Vibius", "Zenobius", "Albinus", "Brutus", "Celsus", "Domitius", "Egnatius", "Faustus", "Gratian", "Hortensius", "Junius", "Kallus", "Livius", "Modius", "Nero", "Ovidius", "Paullus", "Ravian", "Sextus", "Tullius", "Umbrius", "Vorenus", "Aemilius", "Caelius", "Decius", "Fulvius", "Gracchus", "Herennius", "Laelius", "Minucius", "Numerius", "Pescennius"],
+      "female": ["Aelia", "Camilla", "Domitia", "Flavia", "Galeria", "Horatia", "Julia", "Livia", "Marcia", "Nova", "Octavia", "Portia", "Quintina", "Rutilia", "Sabina", "Tertia", "Valeria", "Vibia", "Aurelia", "Faustina", "Claudia", "Drusa", "Fabia", "Laelia", "Marcellina", "Placidia", "Rufina", "Sergia", "Tullia", "Vipsania", "Antonia", "Balbina", "Crispina", "Domina", "Euphemia", "Fulvia", "Gratiana", "Hadriana", "Iunia", "Lollia", "Mamilia", "Nonia", "Ostia", "Petronia", "Quinta", "Rustica", "Salvia", "Tatiana", "Ursa", "Verginia", "Acilia", "Baebia", "Caecilia", "Decia", "Fadia", "Geganina", "Hortensia", "Licinia", "Mettia", "Norbana"]
+    },
+    "Breton": {
+      "male": ["Alain", "Baudouin", "Corantin", "Dumont", "Erwan", "Gael", "Hervis", "Josselin", "Lysander", "Meriadoc", "Orius", "Perrin", "Riordan", "Sylas", "Thibault", "Vorian", "Yves", "Cedran", "Mathis", "Roland", "Corentin", "Even", "Gurvan", "Hoël", "Jorys", "Malo", "Ninian", "Rioc", "Tanguy", "Yannick", "Armel", "Brieuc", "Cado", "Divy", "Erwan", "Fanch", "Gildas", "Hervé", "Ivy", "Judicaël", "Kaou", "Loïc", "Maël", "Neven", "Olier", "Paol", "Ronan", "Soizic", "Tristan", "Urbain", "Vianney", "Wandrille", "Xavier", "Yorick", "Zacharie"],
+      "female": ["Adelise", "Brigitte", "Clarisse", "Delphine", "Elara", "Fleur", "Genevieve", "Heloise", "Iselle", "Julienne", "Liliane", "Margaux", "Nimue", "Odette", "Rosalind", "Sibylle", "Vivienne", "Ysolde", "Cerys", "Morgane", "Aveline", "Beatrice", "Coralie", "Estelle", "Gwendoline", "Lys", "Maelis", "Oriane", "Rowena", "Seraphine", "Adèle", "Béatrice", "Céline", "Diane", "Élodie", "Félicie", "Gwenaëlle", "Henriette", "Isabeau", "Joséphine", "Kerlenn", "Léonie", "Maëlys", "Nolwenn", "Ophélie", "Perrine", "Quitterie", "Rozenn", "Suzanne", "Tiphaine", "Urbaine", "Valentine", "Wendy", "Xénia", "Yuna"]
+    },
+    "Redguard": {
+      "male": ["Azadi", "Bashir", "Dahir", "Fahir", "Hassan", "Jaffar", "Khalid", "Malik", "Nasser", "Omar", "Rashid", "Samir", "Tarik", "Usama", "Yasin", "Zahir", "Azzin", "Cyrus", "Radan", "Sahan", "Barakah", "Jalal", "Karim", "Mansur", "Nabil", "Riyad", "Sadiq", "Tariq", "Walid", "Zayd", "Akil", "Basir", "Daoud", "Faisal", "Ghalib", "Hamid", "Idris", "Jibril", "Kamil", "Lutfi", "Mahir", "Nasir", "Qadir", "Rafi", "Sabir", "Tahir", "Umar", "Wasim", "Yahya", "Zaki", "Adnan", "Bilal", "Dinar", "Faruq", "Hakim"],
+      "female": ["Aisha", "Bahira", "Dalila", "Fatin", "Ghalia", "Halima", "Jasmina", "Kamilah", "Layla", "Muna", "Nadia", "Oriana", "Rana", "Safiya", "Tahira", "Yasmin", "Zahra", "Amira", "Naila", "Samira", "Amina", "Bushra", "Farida", "Hana", "Jamila", "Lubna", "Nura", "Rashida", "Salma", "Zakia", "Asma", "Badiyah", "Camelia", "Dunya", "Elham", "Fatima", "Ghada", "Hind", "Iman", "Juman", "Khadija", "Latifa", "Maysa", "Nadia", "Ola", "Qamar", "Rima", "Saba", "Thana", "Ulya", "Wafa", "Xara", "Yusra", "Zaynab"]
+    },
+    "Altmer": {
+      "male": ["Aicantar", "Calcelmo", "Elrondir", "Gelthor", "Hendil", "Karndar", "Lauriel", "Mankar", "Nerien", "Ondolemar", "Pelinal", "Quaranir", "Rulindil", "Sinderion", "Tanion", "Uulen", "Vorian", "Xercen", "Ancano", "Caelor", "Eleniel", "Falor", "Gildor", "Ithilion", "Larethor", "Nimloth", "Orophin", "Rumil", "Tathar", "Vanimar", "Aldaril", "Berenion", "Celethor", "Duinion", "Erestor", "Finwe", "Galdor", "Haldir", "Inglor", "Joril", "Kelethor", "Lindir", "Mithrandir", "Nendir", "Oropher", "Penlod", "Quenar", "Rochir", "Silivren", "Tindomiel", "Umbardil", "Valandil", "Wendir", "Xandir", "Yavannil"],
+      "female": ["Alawen", "Aryon", "Celdrahil", "Eldamil", "Farin", "Galanodel", "Ilanya", "Kynareth", "Lilatha", "Miriath", "Niriel", "Olenwyn", "Quenara", "Rurelion", "Silma", "Talara", "Ursanne", "Valsirenn", "Yvara", "Zaleria", "Aerin", "Ciryatan", "Eärwen", "Findis", "Idril", "Laurelin", "Meril", "Nimue", "Tinúviel", "Varda", "Amarië", "Brethil", "Calathiel", "Dioriel", "Eldalótë", "Fíriel", "Gilraen", "Híril", "Ithilwen", "Jasra", "Kíriel", "Lúthien", "Míriel", "Niphredil", "Oropheriel", "Palmir", "Quelwen", "Rían", "Silmariën", "Telperien", "Uinen", "Vanimeldë", "Wenriel", "Xilphariel", "Yavannamírë"]
+    },
+    "Bosmer": {
+      "male": ["Aelwin", "Bor", "Caalorn", "Elond", "Fimion", "Gaenor", "Hondros", "Indriel", "Ja'ren", "Korth", "Llandris", "Mithor", "Nimphan", "Ormond", "Pelin", "Quiron", "Silvenar", "Tandil", "Ulthorn", "Beleg", "Cirdan", "Denethor", "Eol", "Feren", "Gwindor", "Halmir", "Lenwë", "Oropher", "Saeros", "Thingol", "Aranel", "Beren", "Caranthir", "Dior", "Elenwë", "Fingon", "Gildor", "Haldir", "Imladris", "Jorund", "Keleborn", "Lomion", "Maedhros", "Neldor", "Orophin", "Peregrin", "Quen", "Rumil", "Sador", "Taurion", "Ulfang", "Vorondil", "Weland", "Xeran", "Yaveth"],
+      "female": ["Anwen", "Bravil", "Cindiri", "Deyanira", "Elanwe", "Finori", "Ghilani", "Hondara", "Ilmara", "Ja'fina", "Kesh", "Lianna", "Melys", "Niraya", "Orana", "Piri", "Quinthia", "Raelag", "Sarel", "Taminwe", "Arwen", "Bereniel", "Celebrindal", "Elanor", "Finduilas", "Gilraen", "Ithilwen", "Luthien", "Nimloth", "Silmarien", "Aredhel", "Beleril", "Círdanel", "Dís", "Eldalótë", "Fíriel", "Galadriel", "Híril", "Idril", "Jasril", "Kíriel", "Lothíriel", "Míriel", "Niphredil", "Oropheriel", "Palmiriel", "Quelwen", "Rían", "Silivren", "Tinúviel", "Uinen", "Vardamir", "Wenriel", "Xilphariel", "Yavannamírë"]
+    },
+    "Dunmer": {
+      "male": ["Andas", "Balur", "Crassius", "Daryn", "Eryndor", "Falvilo", "Galdrus", "Hlaren", "Ildari", "Kaushad", "Llaren", "Mavon", "Neloth", "Othren", "Pellus", "Relyn", "Sarethi", "Teldryn", "Uvyn", "Vilyn", "Aldryn", "Berel", "Drelas", "Faryon", "Gavis", "Hleryn", "Iver", "Karus", "Llandel", "Milyn", "Nelyn", "Olis", "Parnil", "Qorwyn", "Rulvyn", "Sondas", "Tramyn", "Ulven", "Varon", "Welyn", "Xaryn", "Yalvon", "Zerith", "Aranil", "Baryn", "Covyn", "Dralyn", "Erol", "Fervyn", "Goril", "Helvyn", "Ildyn", "Joril", "Kylor"],
+      "female": ["Almse", "Bravosi", "Dralora", "Eris", "Farena", "Gals", "Hlona", "Ilmeni", "Julan", "Karethys", "Lleraya", "Milyn", "Naryu", "Oresa", "Pellus", "Ravani", "Savani", "Teldra", "Ulyn", "Velanya", "Aldora", "Berana", "Dralasa", "Erenea", "Favela", "Hlavea", "Ildri", "Karena", "Llensi", "Mavani", "Nevani", "Olevi", "Pavani", "Qorana", "Ravela", "Sareni", "Talvani", "Uvani", "Veralen", "Wyni", "Xelni", "Yalni", "Zareni", "Arvani", "Beralen", "Covena", "Draleni", "Erevi", "Feralen", "Gavani", "Helani", "Iralen", "Joreni", "Kivalen", "Lloreni"]
+    },
+    "Orsimer": {
+      "male": ["Bazul", "Durgash", "Ghamorz", "Ghorza", "Gul", "Khaguk", "Lurbuk", "Mogdurz", "Nagrub", "Ogrul", "Ragash", "Shagar", "Thrug", "Urzoga", "Varz", "Yagash", "Zag", "Gortwog", "Mulag", "Shuftharz", "Bolg", "Dumag", "Gorzak", "Khazgur", "Lugdush", "Mograk", "Narzug", "Oghul", "Ruzgar", "Ughash", "Azog", "Burguk", "Durgob", "Ghamul", "Horguz", "Khargol", "Lugrub", "Mogdurz", "Nargob", "Ogruk", "Pogdurz", "Razgur", "Shagrol", "Thrugob", "Uglug", "Varguk", "Wurrg", "Xurgaz", "Yargol", "Zugrub", "Azhog", "Bazgur", "Dorzog", "Gorzog", "Huzgur"],
+      "female": ["Bolar", "Dulug", "Garakh", "Gorlob", "Kharag", "Lash", "Mogdurz", "Narag", "Olurb", "Pogdurz", "Razul", "Shagarz", "Thonar", "Ugor", "Vul", "Yatul", "Zurbag", "Azuk", "Borgakh", "Lash", "Bula", "Dugra", "Gorza", "Khagra", "Lorga", "Mogza", "Norga", "Olga", "Ragasha", "Ushar", "Agrub", "Borag", "Dulza", "Gorzaga", "Khagz", "Lashag", "Mogdul", "Naragob", "Olzaga", "Pogdul", "Razga", "Shagob", "Thonag", "Uzga", "Vulug", "Yatag", "Zagrub", "Azgar", "Borgul", "Dulag", "Garza", "Khazag", "Lurza", "Morga", "Narza"]
+    },
+    "Khajiit": {
+      "male": ["Ahzirr", "Ba'Dar", "Daro'Jir", "Dro'Zhir", "Ja'Rak", "J'zargo", "Kharjo", "Ma'Rak", "M'aiq", "Ra'Jirr", "Risaad", "S'rendarr", "Shazzar", "Tha'Ri", "Vasha", "Za'ji", "Dar'Rakki", "Fadomai", "Mizzik", "Do'Shir", "J'darr", "Ko'Rak", "Ma'dran", "Qa'Ren", "Ri'saad", "Sa'vir", "Ta'zir", "U'kham", "Za'resh", "Ah'varr", "Ba'Rak", "Daro'Khar", "Dro'Jah", "Ja'Khar", "J'Rak", "Khar'Dar", "Ma'Jirr", "M'Dar", "Ra'Zhir", "Ri'Daro", "Sa'Rak", "Shad'Var", "Ta'Jirr", "U'Zhar", "Va'Dar", "Xa'Jirr", "Ya'Rak", "Za'Jirr", "Ah'Zir", "Do'Rak", "Ja'Dar", "Ko'Zhir", "Ma'Sharr", "Qa'Jirr"],
+      "female": ["Ahdari", "Bisha", "Caska", "Daro'Jah", "Dri'sa", "J'batha", "Keshu", "M'jira", "Qa'Dar", "Razhana", "S'vashni", "Shan'ri", "Tasari", "U'zara", "Vasha", "Y'zara", "Zamira", "Mizara", "Khayla", "Do'Jah", "Ja'shana", "Ko'Shira", "M'raji", "Qa'Rasha", "Ra'Zayma", "Sa'dara", "Ta'zara", "U'zasha", "Za'Kira", "Ah'Dara", "Ba'Shira", "Daro'Kira", "Dro'Jara", "Ja'Rasha", "J'Raja", "Khar'Jara", "Ma'Shara", "M'Dara", "Ra'Kira", "Ri'Zara", "Sa'Zama", "Shad'Jara", "Ta'Rasha", "U'Zama", "Va'Rasha", "Xa'Kira", "Ya'Zara", "Za'Rasha", "Ah'Zama", "Do'Kira", "Ja'Zara", "Ko'Jara", "Ma'Zama", "Qa'Shara"]
+    },
+    "Argonian": {
+      "male": ["Beeko", "Chuka", "Deekus", "Eejor", "Gee-Rus", "Huleeya", "Jaree-Ra", "Kaj-Ei", "Leeka", "Meele", "Nass", "Ocheeva", "Paat", "Qu'Rah", "Ree-Nak", "Sho-Rak", "Teekeeus", "Uta", "Veezara", "Wajee", "Ajee", "Breeks", "Chucks", "Daru", "Eekus", "Flaat", "Geeko", "Heeja", "Keeva", "Liz-Ra", "Meekus", "Neeja", "Oojus", "Peeja", "Qee-Ra", "Reekus", "Seeja", "Teekus", "Uujus", "Veeja", "Wee-Ra", "Xeekus", "Yeeja", "Zee-Ra", "Aru", "Beku", "Cheeja", "Dekus", "Eeru", "Fekus", "Geeja", "Hekus", "Iru", "Jeeja", "Kekus"],
+      "female": ["Chana", "Deetsa", "Eecha", "Fera", "Gah-Ju", "Heeta", "Jaree", "Keerava", "Laksha", "Madesi", "Neesha", "Ocheeva", "Peesha", "Quarra", "Reesa", "Sheeva", "Teeva", "Uuthak", "Washa", "Aneeqa", "Breela", "Cheeta", "Deeka", "Eena", "Feesha", "Geeska", "Heeku", "Jeesa", "Keesha", "Leeka", "Meesha", "Neeska", "Oolee", "Peeska", "Queeka", "Reeska", "Sheeka", "Teesha", "Uulee", "Veeska", "Weesha", "Xeeka", "Yeesha", "Zeeska", "Aruka", "Beesha", "Cheeka", "Deesha", "Eeka", "Feeska", "Geesha", "Heeska", "Ieesha", "Jeeska", "Keeska"]
+    }
+  },
+  "classTitles": {
+    "Warrior": { "male": { "en": "the Warrior", "pt": "o Guerreiro" }, "female": { "en": "the Warrior", "pt": "a Guerreira" } },
+    "Barbarian": { "male": { "en": "the Barbarian", "pt": "o Bárbaro" }, "female": { "en": "the Barbarian", "pt": "a Bárbara" } },
+    "Ranger": { "male": { "en": "the Ranger", "pt": "o Patrulheiro" }, "female": { "en": "the Ranger", "pt": "a Patrulheira" } },
+    "Rogue": { "male": { "en": "the Rogue", "pt": "o Ladino" }, "female": { "en": "the Rogue", "pt": "a Ladina" } },
+    "Nightblade": { "male": { "en": "the Nightblade", "pt": "o Cutelo Noturno" }, "female": { "en": "the Nightblade", "pt": "a Cutelo Noturno" } },
+    "Paladin": { "male": { "en": "the Paladin", "pt": "o Paladino" }, "female": { "en": "the Paladin", "pt": "a Paladina" } },
+    "Cleric": { "male": { "en": "the Cleric", "pt": "o Clérigo" }, "female": { "en": "the Cleric", "pt": "a Clériga" } },
+    "Mage": { "male": { "en": "the Mage", "pt": "o Mago" }, "female": { "en": "the Mage", "pt": "a Maga" } },
+    "Conjurer": { "male": { "en": "the Conjurer", "pt": "o Conjurador" }, "female": { "en": "the Conjurer", "pt": "a Conjuradora" } },
+    "Pyromancer": { "male": { "en": "the Pyromancer", "pt": "o PiroMago" }, "female": { "en": "the Pyromancer", "pt": "a PiroMaga" } },
+    "Cryomancer": { "male": { "en": "the Cryomancer", "pt": "o Criomago" }, "female": { "en": "the Cryomancer", "pt": "a Criomaga" } },
+    "Battlemage": { "male": { "en": "the Battlemage", "pt": "o Mago de Batalha" }, "female": { "en": "the Battlemage", "pt": "a Maga de Batalha" } },
+    "Spellsword": { "male": { "en": "the Spellsword", "pt": "o Espadachim Arcano" }, "female": { "en": "the Spellsword", "pt": "a Espadachim Arcano" } },
+    "Necromancer": { "male": { "en": "the Necromancer", "pt": "o Necromante" }, "female": { "en": "the Necromancer", "pt": "a Necromante" } },
+    "Assassin": { "male": { "en": "the Assassin", "pt": "o Assassino" }, "female": { "en": "the Assassin", "pt": "a Assassina" } },
+    "Archer": { "male": { "en": "the Archer", "pt": "o Arqueiro" }, "female": { "en": "the Archer", "pt": "a Arqueira" } },
+    "Sorcerer": { "male": { "en": "the Sorcerer", "pt": "o Feiticeiro" }, "female": { "en": "the Sorceress", "pt": "a Feiticeira" } }
+  },
+  "loreRacial": {
+    "en": {
+      "Nord": "🛡️ Child of Kyne, frost resilience and warrior spirit.",
+      "Imperial": "🏛️ Citizen of the Empire, discipline and diplomacy.",
+      "Breton": "📜 Elven blood and human heart, magical affinity.",
+      "Redguard": "⚔️ Yokudan descendant, swordmaster of the dunes.",
+      "Altmer": "✨ Golden-tower Altmer, heir of ancient Ehlnofey.",
+      "Bosmer": "🌿 Green Pact, swift arrow and woodland guardian.",
+      "Dunmer": "🔥 Ash and ancestry, survivor of Resdayn.",
+      "Orsimer": "💪 Forged by Malacath, clan honor and indomitable strength.",
+      "Khajiit": "🌙 Child of the Mane, nocturnal agility and clever trade.",
+      "Argonian": "🌿 Anointed by the Hist, amphibious resilience."
+    },
+    "pt": {
+      "Nord": "🛡️ Filho(a) de Kyne, resistência gelada e espírito guerreiro.",
+      "Imperial": "🏛️ Cidadão(ã) do império, disciplina e diplomacia.",
+      "Breton": "📜 Sangue élfico e humano, afinidade mágica.",
+      "Redguard": "⚔️ Descendente de Yokuda, mestre(a) da espada.",
+      "Altmer": "✨ Altmer das torres douradas, herdeiro(a) do antigo Ehlnofey.",
+      "Bosmer": "🌿 Pacto Verde, guardião(ã) das florestas de Valenwood.",
+      "Dunmer": "🔥 Cinzas e ancestralidade, sobrevivente de Resdayn.",
+      "Orsimer": "💪 Forjado(a) por Malacath, honra do clã e força indomável.",
+      "Khajiit": "🌙 Filho(a) do Mane, agilidade noturna e comércio astuto.",
+      "Argonian": "🌿 Ungido(a) pelo Hist, resistência anfíbia."
+    }
+  },
+  "uiTexts": {
+    "en": {
+      "subtitle": "Class-based generator · Requiem + 3bfTweaks · Immersive lore",
+      "race": "RACE", "gender": "GENDER", "class": "CLASS",
+      "male": "Male", "female": "Female",
+      "generateBtn": "✨ Generate New Name ✨",
+      "lorePrefix": "🌿 Lore & tradition:",
+      "footer": "Based on official lore · Perfect for Requiem & 3bfTweaks"
+    },
+    "pt": {
+      "subtitle": "Gerador com classes · Requiem + 3bfTweaks · Lore imersiva",
+      "race": "RAÇA", "gender": "GÊNERO", "class": "CLASSE",
+      "male": "Masculino", "female": "Feminino",
+      "generateBtn": "✨ Gerar Novo Nome ✨",
+      "lorePrefix": "🌿 Lore & tradição:",
+      "footer": "Baseado em lore oficial · Perfeito para Requiem e 3bfTweaks"
+    }
+  },
+  "raceNames": {
+    "en": {},
+    "pt": {
+      "Nord": "Nord", "Imperial": "Imperial", "Breton": "Bretão", "Redguard": "Redguard", "Altmer": "Altmer",
+      "Bosmer": "Bosmer", "Dunmer": "Dunmer", "Orsimer": "Orsimer", "Khajiit": "Khajiit", "Argonian": "Argoniano"
+    }
+  },
+  "classNames": {
+    "en": {},
+    "pt": {
+      "Warrior": "Guerreiro", "Barbarian": "Bárbaro", "Ranger": "Patrulheiro", "Rogue": "Ladino", "Nightblade": "Cutelo Noturno",
+      "Paladin": "Paladino", "Cleric": "Clérigo", "Mage": "Mago", "Conjurer": "Conjurador", "Pyromancer": "PiroMago",
+      "Cryomancer": "Criomago", "Battlemage": "Mago de Batalha", "Spellsword": "Espadachim Arcano", "Necromancer": "Necromante",
+      "Assassin": "Assassino", "Archer": "Arqueiro", "Sorcerer": "Feiticeiro"
+    }
+  }
+}
