@@ -1,35 +1,21 @@
 let globalData = null;
 let currentLang = 'pt';
 
-const DOM = {
-    raceSelect: null,
-    genderSelect: null,
-    classSelect: null,
-    displayName: null,
-    loreNote: null,
-    subtitle: null,
-    raceLabel: null,
-    genderLabel: null,
-    classLabel: null,
-    genBtn: null,
-    footer: null,
-    langEn: null,
-    langPt: null
-};
+const DOM = {};
 
-// Inicialização
 async function loadData() {
     try {
         const response = await fetch('data.json');
-        if (!response.ok) throw new Error('Erro ao carregar data.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         globalData = await response.json();
         populateDropdowns();
         attachEvents();
         updateUI();
-        refreshNameAndLore();
+        refreshNameAndLore();  // gera o primeiro nome
     } catch (err) {
         console.error(err);
-        document.getElementById('subtitleText').innerText = 'Erro ao carregar dados. Verifique se o arquivo data.json existe.';
+        document.getElementById('subtitleText').innerText = 'Erro ao carregar data.json. Verifique o arquivo.';
+        document.getElementById('displayName').innerText = 'Erro nos dados';
     }
 }
 
@@ -50,6 +36,10 @@ function populateDropdowns() {
         option.text = cls;
         DOM.classSelect.appendChild(option);
     });
+    // Define valores padrão (primeiro de cada lista)
+    DOM.raceSelect.value = globalData.races[0];
+    DOM.classSelect.value = globalData.classes[0];
+    DOM.genderSelect.value = 'male';
 }
 
 function attachEvents() {
@@ -86,7 +76,7 @@ function updateUI() {
     DOM.genBtn.innerHTML = texts.generateBtn;
     DOM.footer.innerText = texts.footer;
     
-    // Traduzir nomes das raças nos dropdowns
+    // Traduzir nomes das raças no dropdown
     const raceMap = globalData.raceNames?.[currentLang] || {};
     for (let i = 0; i < DOM.raceSelect.options.length; i++) {
         const opt = DOM.raceSelect.options[i];
@@ -108,7 +98,7 @@ function refreshNameAndLore() {
     const classe = DOM.classSelect.value;
     const fullName = generateFullName(race, gender, classe);
     DOM.displayName.classList.remove('fade-name');
-    void DOM.displayName.offsetHeight;
+    void DOM.displayName.offsetHeight; // força reflow
     DOM.displayName.classList.add('fade-name');
     DOM.displayName.innerText = fullName;
     
@@ -135,7 +125,6 @@ function generateFullName(race, gender, classe) {
     }
 }
 
-// Aguardar DOM e carregar dados
 document.addEventListener('DOMContentLoaded', () => {
     DOM.raceSelect = document.getElementById('raceSelect');
     DOM.genderSelect = document.getElementById('genderSelect');
