@@ -274,7 +274,6 @@
 <script>
     // --------------------------------------------------------------
     // BANCO DE DADOS COMPLETO (Nomes, classes, títulos, lore)
-    // Todos os nomes são originais e criados seguindo a lore de cada raça.
     // --------------------------------------------------------------
     const gameData = {
         races: ["Nord", "Imperial", "Breton", "Redguard", "Altmer", "Bosmer", "Dunmer", "Orsimer", "Khajiit", "Argonian"],
@@ -403,108 +402,68 @@
     };
 
     // --------------------------------------------------------------
-    // LÓGICA DO GERADOR
+    // LÓGICA DO GERADOR (CORRIGIDA)
     // --------------------------------------------------------------
     let currentLang = 'pt';
 
-    const DOM = {
-        raceSelect: null,
-        genderSelect: null,
-        classSelect: null,
-        displayName: null,
-        loreNote: null,
-        subtitle: null,
-        raceLabel: null,
-        genderLabel: null,
-        classLabel: null,
-        genBtn: null,
-        footer: null,
-        langEn: null,
-        langPt: null
-    };
+    // Elementos DOM
+    const raceSelect = document.getElementById('raceSelect');
+    const genderSelect = document.getElementById('genderSelect');
+    const classSelect = document.getElementById('classSelect');
+    const displayName = document.getElementById('displayName');
+    const loreNote = document.getElementById('loreNote');
+    const subtitle = document.getElementById('subtitleText');
+    const raceLabel = document.getElementById('raceLabel');
+    const genderLabel = document.getElementById('genderLabel');
+    const classLabel = document.getElementById('classLabel');
+    const generateBtn = document.getElementById('generateBtn');
+    const footer = document.getElementById('footerText');
+    const langEnBtn = document.getElementById('langEnBtn');
+    const langPtBtn = document.getElementById('langPtBtn');
 
     function populateDropdowns() {
-        DOM.raceSelect.innerHTML = '';
+        raceSelect.innerHTML = '';
         gameData.races.forEach(race => {
             const option = document.createElement('option');
             option.value = race;
             option.text = race;
-            DOM.raceSelect.appendChild(option);
+            raceSelect.appendChild(option);
         });
-        DOM.classSelect.innerHTML = '';
+        classSelect.innerHTML = '';
         gameData.classes.forEach(cls => {
             const option = document.createElement('option');
             option.value = cls;
             option.text = cls;
-            DOM.classSelect.appendChild(option);
+            classSelect.appendChild(option);
         });
-        DOM.raceSelect.value = gameData.races[0];
-        DOM.classSelect.value = gameData.classes[0];
-        DOM.genderSelect.value = 'male';
-    }
-
-    function attachEvents() {
-        DOM.langEn.addEventListener('click', () => {
-            if (currentLang === 'en') return;
-            currentLang = 'en';
-            DOM.langEn.classList.add('active');
-            DOM.langPt.classList.remove('active');
-            updateUI();
-            refreshNameAndLore();
-        });
-        DOM.langPt.addEventListener('click', () => {
-            if (currentLang === 'pt') return;
-            currentLang = 'pt';
-            DOM.langPt.classList.add('active');
-            DOM.langEn.classList.remove('active');
-            updateUI();
-            refreshNameAndLore();
-        });
-        DOM.generateBtn.addEventListener('click', refreshNameAndLore);
-        DOM.raceSelect.addEventListener('change', refreshNameAndLore);
-        DOM.genderSelect.addEventListener('change', refreshNameAndLore);
-        DOM.classSelect.addEventListener('change', refreshNameAndLore);
+        raceSelect.value = gameData.races[0];
+        classSelect.value = gameData.classes[0];
+        genderSelect.value = 'male';
     }
 
     function updateUI() {
         const texts = gameData.uiTexts[currentLang];
-        DOM.subtitle.innerText = texts.subtitle;
-        DOM.raceLabel.innerText = texts.race;
-        DOM.genderLabel.innerText = texts.gender;
-        DOM.classLabel.innerText = texts.class;
-        DOM.genderSelect.options[0].text = texts.male;
-        DOM.genderSelect.options[1].text = texts.female;
-        DOM.genBtn.innerHTML = texts.generateBtn;
-        DOM.footer.innerText = texts.footer;
+        subtitle.innerText = texts.subtitle;
+        raceLabel.innerText = texts.race;
+        genderLabel.innerText = texts.gender;
+        classLabel.innerText = texts.class;
+        genderSelect.options[0].text = texts.male;
+        genderSelect.options[1].text = texts.female;
+        generateBtn.innerHTML = texts.generateBtn;
+        footer.innerText = texts.footer;
 
         const raceMap = gameData.raceNames[currentLang] || {};
-        for (let i = 0; i < DOM.raceSelect.options.length; i++) {
-            const opt = DOM.raceSelect.options[i];
+        for (let i = 0; i < raceSelect.options.length; i++) {
+            const opt = raceSelect.options[i];
             const original = opt.value;
             opt.text = raceMap[original] || original;
         }
         const classMap = gameData.classNames[currentLang] || {};
-        for (let i = 0; i < DOM.classSelect.options.length; i++) {
-            const opt = DOM.classSelect.options[i];
+        for (let i = 0; i < classSelect.options.length; i++) {
+            const opt = classSelect.options[i];
             const original = opt.value;
             opt.text = classMap[original] || original;
         }
-    }
-
-    function refreshNameAndLore() {
-        const race = DOM.raceSelect.value;
-        const gender = DOM.genderSelect.value;
-        const classe = DOM.classSelect.value;
-        const fullName = generateFullName(race, gender, classe);
-        DOM.displayName.classList.remove('fade-name');
-        void DOM.displayName.offsetHeight;
-        DOM.displayName.classList.add('fade-name');
-        DOM.displayName.innerText = fullName;
-
-        const loreBase = gameData.loreRacial[currentLang][race] || '';
-        const classDesc = currentLang === 'en' ? ` · ${classe} path` : ` · Caminho ${classe}`;
-        const prefix = gameData.uiTexts[currentLang].lorePrefix;
-        DOM.loreNote.innerHTML = `<strong>${prefix}</strong> ${loreBase}${classDesc}`;
     }
 
     function generateFullName(race, gender, classe) {
@@ -523,26 +482,48 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        DOM.raceSelect = document.getElementById('raceSelect');
-        DOM.genderSelect = document.getElementById('genderSelect');
-        DOM.classSelect = document.getElementById('classSelect');
-        DOM.displayName = document.getElementById('displayName');
-        DOM.loreNote = document.getElementById('loreNote');
-        DOM.subtitle = document.getElementById('subtitleText');
-        DOM.raceLabel = document.getElementById('raceLabel');
-        DOM.genderLabel = document.getElementById('genderLabel');
-        DOM.classLabel = document.getElementById('classLabel');
-        DOM.genBtn = document.getElementById('generateBtn');
-        DOM.footer = document.getElementById('footerText');
-        DOM.langEn = document.getElementById('langEnBtn');
-        DOM.langPt = document.getElementById('langPtBtn');
+    function refreshNameAndLore() {
+        const race = raceSelect.value;
+        const gender = genderSelect.value;
+        const classe = classSelect.value;
+        const fullName = generateFullName(race, gender, classe);
+        displayName.classList.remove('fade-name');
+        void displayName.offsetHeight;
+        displayName.classList.add('fade-name');
+        displayName.innerText = fullName;
 
-        populateDropdowns();
-        attachEvents();
+        const loreBase = gameData.loreRacial[currentLang][race] || '';
+        const classDesc = currentLang === 'en' ? ` · ${classe} path` : ` · Caminho ${classe}`;
+        const prefix = gameData.uiTexts[currentLang].lorePrefix;
+        loreNote.innerHTML = `<strong>${prefix}</strong> ${loreBase}${classDesc}`;
+    }
+
+    // Eventos
+    langEnBtn.addEventListener('click', () => {
+        if (currentLang === 'en') return;
+        currentLang = 'en';
+        langEnBtn.classList.add('active');
+        langPtBtn.classList.remove('active');
         updateUI();
         refreshNameAndLore();
     });
+    langPtBtn.addEventListener('click', () => {
+        if (currentLang === 'pt') return;
+        currentLang = 'pt';
+        langPtBtn.classList.add('active');
+        langEnBtn.classList.remove('active');
+        updateUI();
+        refreshNameAndLore();
+    });
+    generateBtn.addEventListener('click', refreshNameAndLore);
+    raceSelect.addEventListener('change', refreshNameAndLore);
+    genderSelect.addEventListener('change', refreshNameAndLore);
+    classSelect.addEventListener('change', refreshNameAndLore);
+
+    // Inicialização
+    populateDropdowns();
+    updateUI();
+    refreshNameAndLore();
 </script>
 </body>
 </html>
